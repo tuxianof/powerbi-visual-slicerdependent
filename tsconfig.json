@@ -1,5 +1,10 @@
 {
     "compilerOptions": {
+        "jsx": "react",
+        "types": [
+            "react-dom",
+            "react"
+        ],
         "allowJs": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
@@ -10,10 +15,11 @@
         "declaration": true,
         "lib": [
             "es2022",
-            "dom"
+            "dom",
+            "DOM.Iterable"
         ]
     },
     "files": [
-        "./src/visual.ts"
+        "src/visual.ts"
     ]
 }

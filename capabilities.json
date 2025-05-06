@@ -1,17 +1,31 @@
 {
     "dataRoles": [
         {
-            "displayName": "Category Data",
-            "name": "category",
+            "displayName": "List",
+            "name": "list_values",
             "kind": "Grouping"
-        },
-        {
-            "displayName": "Measure Data",
-            "name": "measure",
-            "kind": "Measure"
         }
     ],
+    "supportsMultiVisualSelection": true,
     "objects": {
+        "general": {
+            "displayName": "General",
+            "displayNameKey": "formattingGeneral",
+            "properties": {
+                "filter": {
+                    "type": {
+                        "filter": true
+                    }
+                },
+                "filterWhite": {
+                    "type": {
+                        "filter": {
+                            "filterWhite": true
+                        }
+                    }
+                }
+            }
+        },
         "dataPoint": {
             "properties": {
                 "defaultColor": {
@@ -42,7 +56,7 @@
                         "fill": {}
                     }
                 },
-                 "fontSize": {
+                "fontSize": {
                     "type": {
                         "formatting": {
                             "fontSize": true
@@ -57,17 +71,14 @@
             "categorical": {
                 "categories": {
                     "for": {
-                        "in": "category"
-                    },
-                    "dataReductionAlgorithm": {
-                        "top": {}
+                        "in": "list_values"
                     }
                 },
                 "values": {
                     "select": [
                         {
                             "bind": {
-                                "to": "measure"
+                                "to": "list_values"
                             }
                         }
                     ]
