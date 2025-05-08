@@ -1,12 +1,38 @@
 {
     "dataRoles": [
         {
-            "displayName": "List",
-            "name": "list_values",
-            "kind": "Grouping"
+            "displayName": "Values",
+            "name": "table_1",
+            "kind": "Grouping",
+            "requiredTypes": [
+                {
+                    "text": true
+                },
+                {
+                    "numeric": true
+                },
+                {
+                    "integer": true
+                }
+            ],
+            "preferredTypes": [
+                {
+                    "text": true
+                }
+            ]
         }
     ],
-    "supportsMultiVisualSelection": true,
+    "dataViewMappings": [
+        {
+            "matrix": {
+                "rows": {
+                    "for": {
+                        "in": "table_1"
+                    }
+                }
+            }
+        }
+    ],
     "objects": {
         "general": {
             "displayName": "General",
@@ -15,13 +41,6 @@
                 "filter": {
                     "type": {
                         "filter": true
-                    }
-                },
-                "filterWhite": {
-                    "type": {
-                        "filter": {
-                            "filterWhite": true
-                        }
                     }
                 }
             }
@@ -66,25 +85,5 @@
             }
         }
     },
-    "dataViewMappings": [
-        {
-            "categorical": {
-                "categories": {
-                    "for": {
-                        "in": "list_values"
-                    }
-                },
-                "values": {
-                    "select": [
-                        {
-                            "bind": {
-                                "to": "list_values"
-                            }
-                        }
-                    ]
-                }
-            }
-        }
-    ],
     "privileges": []
 }

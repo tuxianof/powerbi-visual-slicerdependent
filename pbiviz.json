@@ -6,10 +6,10 @@
         "visualClassName": "Visual",
         "version": "1.0.0.0",
         "description": "Slicer",
-        "supportUrl": "",
+        "supportUrl": "tuxianof@gmail.com",
         "gitHubUrl": "https://github.com/tuxianof/powerbi-visual-slicerdependent"
     },
-    "apiVersion": "5.3.0",
+    "apiVersion": "5.10.0",
     "author": {
         "name": "Luis Felipe - tuxianof",
         "email": "tuxianof@gmail.com"

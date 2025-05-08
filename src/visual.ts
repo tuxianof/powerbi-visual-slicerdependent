@@ -2,8 +2,6 @@
 
 import powerbi from "powerbi-visuals-api";
 import powerbiVisualsApi from 'powerbi-visuals-api'
-import FilterAction = powerbiVisualsApi.FilterAction
-import { IAdvancedFilter, IAdvancedFilterCondition, IFilterColumnTarget, AdvancedFilter } from "powerbi-models";
 import { FormattingSettingsService } from "powerbi-visuals-utils-formattingmodel";
 import { VisualFormattingSettingsModel } from "./settings";
 
@@ -37,9 +35,10 @@ export class Visual implements IVisual {
 
     public update(options: VisualUpdateOptions) {
         const dataView: DataView = options.dataViews[0]
-        Main.update(dataView)
+        if (dataView.matrix) {
+            Main.update(dataView)
+        }
     }
-
 
     public getFormattingModel(): powerbi.visuals.FormattingModel {
         return this.formattingSettingsService.buildFormattingModel(this.formattingSettings)

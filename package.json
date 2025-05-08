@@ -18,9 +18,9 @@
     "@floating-ui/react": "^0.27.5",
     "lucide-react": "^0.477.0",
     "powerbi-models": "^1.15.2",
-    "powerbi-visuals-api": "~5.3.0",
-    "powerbi-visuals-tools": "^5.6.0",
-    "powerbi-visuals-utils-formattingmodel": "6.0.4",
+    "powerbi-visuals-api": "~5.10.0",
+    "powerbi-visuals-tools": "^6.1.0",
+    "powerbi-visuals-utils-formattingmodel": "^6.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
