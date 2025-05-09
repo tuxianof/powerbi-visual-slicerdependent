@@ -61,6 +61,9 @@ export default class Main extends React.Component<MainProps, State> {
     }
 
     cambio(event) {
+        if (event.target.value == "") {
+            return
+        }
         let dataset = event.target.dataset
         let node: TreeNode = null
         let nodeValue = null

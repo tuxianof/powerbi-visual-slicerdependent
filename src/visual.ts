@@ -10,6 +10,7 @@ import VisualConstructorOptions = powerbi.extensibility.visual.VisualConstructor
 import VisualUpdateOptions = powerbi.extensibility.visual.VisualUpdateOptions
 import IVisual = powerbi.extensibility.visual.IVisual
 import IVisualHost = powerbi.extensibility.visual.IVisualHost
+import IVisualEventService = powerbi.extensibility.IVisualEventService;
 
 import "./../assets/visual.css";
 
@@ -23,14 +24,17 @@ export class Visual implements IVisual {
     private host: IVisualHost
     private formattingSettings: VisualFormattingSettingsModel
     private formattingSettingsService: FormattingSettingsService
-    private reactRoot: React.ReactElement<any, any>
+    private reactRoot: ReactDOM.Root
+    private events: IVisualEventService;
 
     constructor(options: VisualConstructorOptions) {
         this.target = options.element
         this.host = options.host
-        this.reactRoot = React.createElement(Main, { host: this.host })
-        const root = ReactDOM.createRoot(this.target);
-        root.render(this.reactRoot);
+        this.events = options.host.eventService
+        this.reactRoot = ReactDOM.createRoot(this.target);
+        this.reactRoot.render(
+            React.createElement(Main, { host: this.host, matrix: null })
+        )
     }
 
     public update(options: VisualUpdateOptions) {
@@ -38,6 +42,7 @@ export class Visual implements IVisual {
         if (dataView.matrix) {
             Main.update(dataView)
         }
+        this.events.renderingFinished(options);
     }
 
     public getFormattingModel(): powerbi.visuals.FormattingModel {

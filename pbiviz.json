@@ -4,7 +4,7 @@
         "displayName": "slicer_dependent",
         "guid": "slicerdependent43D0BDDB1F1C41158F68DD73E8C65330",
         "visualClassName": "Visual",
-        "version": "1.0.0.0",
+        "version": "1.0.0.2",
         "description": "Slicer",
         "supportUrl": "tuxianof@gmail.com",
         "gitHubUrl": "https://github.com/tuxianof/powerbi-visual-slicerdependent"
@@ -20,5 +20,5 @@
     "capabilities": "capabilities.json",
     "dependencies": null,
     "stringResources": [],
-    "version": "1.0.0.0"
+    "version": "1.0.0.2"
 }

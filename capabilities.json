@@ -85,5 +85,11 @@
             }
         }
     },
-    "privileges": []
+    "privileges": [],
+    "supportsLandingPage": false,
+    "supportsOnObjectFormatting": true,
+    "enablePointerEventsFormatMode": true,
+    "supportsHighlight": true,
+    "suppressDefaultTitle": true,
+    "supportsSynchronizingFilterState": true
 }
