@@ -11,6 +11,7 @@ import VisualUpdateOptions = powerbi.extensibility.visual.VisualUpdateOptions
 import IVisual = powerbi.extensibility.visual.IVisual
 import IVisualHost = powerbi.extensibility.visual.IVisualHost
 import IVisualEventService = powerbi.extensibility.IVisualEventService;
+import FilterAction = powerbiVisualsApi.FilterAction
 
 import "./../assets/visual.css";
 
@@ -39,6 +40,7 @@ export class Visual implements IVisual {
 
     public update(options: VisualUpdateOptions) {
         const dataView: DataView = options.dataViews[0]
+        this.host.applyJsonFilter(null, "general", "filter", FilterAction.merge);
         if (dataView.matrix) {
             Main.update(dataView)
         }
